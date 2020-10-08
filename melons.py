@@ -32,7 +32,10 @@ class Melon(object):
                                              self.melon_type)
 
 # FIXME: Add Squash class definition here.
-class Squash(Melon):
-    def __init__ (self, squash_type):
-        self.squash_type = squash_type
-        
+class Squash(Melon): # squash is already inheriting all of the attributes of melon
+
+    def prep(self):
+        """Prepare the squash"""
+
+        super().prep() # do everything the melon prep is doing, plus:
+        robots.painterbot.paint(self)
